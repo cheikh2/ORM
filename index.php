@@ -7,4 +7,4 @@ use src\controller\MoralController;
 include_once "config/autoload.php";
 
 $morald = new MoralController();
-$morald->add();
+$morald->getAll();

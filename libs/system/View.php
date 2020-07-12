@@ -27,7 +27,7 @@ class View
 
                 break;
             case 2;
-
+                $file = "src/view/" . $args[0] . ".php";
                 if (file_exists($file)) {
 
                     $data = $args[1];
