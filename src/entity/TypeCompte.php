@@ -15,7 +15,9 @@ class TypeCompte
      * @ORM\Column(type="integer")
      */
     private $id;
-    /**@Column(type='="string") **/
+    /**
+     * @ORM\Column(type="string")
+     */
     private $libelle;
 
     public function __construct()

@@ -1,7 +1,6 @@
 <?php
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -54,25 +53,28 @@ class Compte
 
     /**
      * @ORM\ManyToOne(targetEntity="TypeCompte", inversedBy="comptes")
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $typeCompte;
+    private $typeComptes;
 
      /**
      * @ORM\ManyToOne(targetEntity="Moral", inversedBy="comptes")
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $moral;
+    private $morals;
 
     /**
      * @ORM\ManyToOne(targetEntity="Physique", inversedBy="comptes")
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $physique;
+    private $physiques;
 
     public function __construct()
     {
         $this->createdAt = new \DateTime();
-        $this->typeCompte = new ArrayCollection();
-        $this->moral = new ArrayCollection();
-        $this->physique = new ArrayCollection();
+        $this->typeComptes = new ArrayCollection();
+        $this->morals = new ArrayCollection();
+        $this->physiques = new ArrayCollection();
     }
 
     public function getId()
@@ -147,29 +149,29 @@ class Compte
     {
         $this->dateFin = $dateFin;
     }
-    public function getTypeCompte()
+    public function getTypeComptes()
     {
-        return $this->typeCompte;
+        return $this->typeComptes;
     }
-    public function setTypeCompte($typeCompte)
+    public function setTypeComptes($typeComptes)
     {
-        $this->typeCompte = $typeCompte;
+        $this->typeComptes = $typeComptes;
     }
-    public function getMoral()
+    public function getMorals()
     {
-        return $this->moral;
+        return $this->morals;
     }
-    public function setMoral($moral)
+    public function setMorals($morals)
     {
-        $this->moral = $moral;
+        $this->morals = $morals;
     }
 
-    public function getPhysique()
+    public function getPhysiques()
     {
-        return $this->physique;
+        return $this->physiques;
     }
-    public function setPhysique($physique)
+    public function setPhysique($physiques)
     {
-        $this->physique = $physique;
+        $this->physiques = $physiques;
     }
 }
