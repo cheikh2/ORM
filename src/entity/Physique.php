@@ -1,37 +1,72 @@
 <?php
-use Doctrine\ORM\Annotation as ORM;
+
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Entity @Table(name="Compte")
+ * @ORM\Entity
+ * @ORM\Table(name="Physique")
  */
-
 class Physique
 {
-    /** @Id @Column(type='="integer") @GeneratedValue*/
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
     private $id;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $prenom;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $nom;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $adress;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $email;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $telephone;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $sexe;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $profession;
-    /**@Column(type='="integer") **/
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $cni;
-    /**@Column(type='="integer") **/
+
+    /**
+     * @ORM\Column(type="integer")
+     */
     private $salaire;
     
-    private $Moral;
+    /**
+     * @ORM\ManyToOne(targetEntity="Moral", inversedBy="physiques")
+     */
+    private $moral;
 
 
-    public function __construct(array $data)
+    public function __construct()
     {
     }
 

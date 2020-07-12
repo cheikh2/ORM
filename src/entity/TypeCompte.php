@@ -1,13 +1,19 @@
 <?php
-use Doctrine\ORM\Annotation as ORM;
+
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Entity @Table(name="Compte")
+ * @ORM\Entity
+ * @ORM\Table(name="TypeCompte")
  */
 class TypeCompte
 {
 
-    /** @Id @Column(type='="integer") @GeneratedValue*/
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
     private $id;
     /**@Column(type='="string") **/
     private $libelle;

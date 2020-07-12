@@ -1,33 +1,78 @@
 <?php
-use Doctrine\ORM\Annotation as ORM;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @Entity @Table(name="Compte")
+ * @ORM\Entity
+ * @ORM\Table(name="Compte")
  */
 class Compte
 {
-
-    /** @Id @Column(type='="integer") @GeneratedValue*/
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
     private $id;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $numAgence;
-    /**@Column(type='="string") **/
-    private $rib;
-    /**@Column(type='="integer") **/
-    private $montant;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $numCompte;
-    /**@Column(type='="date") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $rib;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $montant;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
     private $dateDebut;
-    /**@Column(type='="date") **/
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
     private $dateFin;
-    
+
+    /**
+     * @ORM\ManyToOne(targetEntity="TypeCompte", inversedBy="comptes")
+     */
     private $typeCompte;
+
+     /**
+     * @ORM\ManyToOne(targetEntity="Moral", inversedBy="comptes")
+     */
     private $moral;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Physique", inversedBy="comptes")
+     */
     private $physique;
 
     public function __construct()
     {
+        $this->createdAt = new \DateTime();
+        $this->typeCompte = new ArrayCollection();
+        $this->moral = new ArrayCollection();
+        $this->physique = new ArrayCollection();
     }
 
     public function getId()
@@ -79,7 +124,10 @@ class Compte
     {
         $this->montant = $montant;
     }
-
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
     public function getDateDebut()
     {
         return $this->dateDebut;

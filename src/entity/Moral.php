@@ -1,27 +1,49 @@
 <?php
-use Doctrine\ORM\Annotation as ORM;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @Entity @Table(name="Compte")
+ * @ORM\Entity
+ * @ORM\Table(name="Moral")
  */
 class Moral{
 
-    /** @Id @Column(type='="integer") @GeneratedValue*/
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
     private $id;
-    /**@Column(type='="string") **/ 
+
+    /**
+     * @ORM\Column(type="string")
+     */ 
     private $nomEmpl;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $ninea;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $rc;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $raisonSocial;
-    /**@Column(type='="string") **/
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $adressEmpl;
 
     public function __construct()
     {
- 
+        $this->physiques = new ArrayCollection();
     }
 
     public function getId()
