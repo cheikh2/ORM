@@ -1,5 +1,5 @@
 <?php
-namespace src\controller;
+//namespace src\controller;
 
 use libs\system\Controller;
 use src\model\MoralDb;
@@ -14,5 +14,9 @@ class MoralController extends Controller
         $moraldao = new MoralDb;
         $moral = $moraldao->findAll();
         return $this->view->load("moral/getAll", $moral);
+    }
+
+    public function delete($id){
+        echo $id;
     }
 }
