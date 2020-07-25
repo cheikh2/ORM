@@ -1,7 +1,8 @@
 <?php
+//namespace src\entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+//use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -41,10 +42,10 @@ class Moral{
      */
     private $adressEmpl;
 
-    public function __construct()
-    {
-        $this->physiques = new ArrayCollection();
-    }
+    // public function __construct()
+    // {
+    //     $this->physiques = new ArrayCollection();
+    // }
 
     public function getId()
     {

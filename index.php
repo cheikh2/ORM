@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 
 include_once "config/autoload.php";
 
-// $morald = new MoralController();
-// $morald->getAll();
+//  $morald = new MoralController();
+//  $morald->getAll();
 
 $mvc = new libs\system\BootStrap();

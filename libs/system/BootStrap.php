@@ -40,7 +40,7 @@ class BootStrap
         die($controller_file . " n'existe pas");
       }
     } else {
-      echo "MVC";
+      echo "Bienvenue à la banque du peuple";
     }
   }
 }

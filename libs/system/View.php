@@ -16,6 +16,7 @@ class View
 
         #####--verifier le nombre d'arguments----#####
         switch ($num) {
+            
             case 1;
                 $file = "src/view/" . $args[0] . ".php";
 

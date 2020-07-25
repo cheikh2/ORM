@@ -10,4 +10,9 @@ class MoralDb extends Model
                     ->createQuery("SELECT m FROM Moral m")
                     ->getResult();
     }
+
+    public function insert($moral){
+        $this->entityManager->persist($moral);
+        $this->entityManager->flush();
+    }
 }
