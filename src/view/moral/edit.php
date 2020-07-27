@@ -43,40 +43,45 @@
             </nav>
             <br />
 
-            <form action="" method="POST" id="myform2">
+            <form action="../update" method="POST" id="myform2">
 
                 <fieldset id="field1">
                     <legend id="legend1">Informations Client</legend>
                     <div id="infoClient">
-
+                    <?php foreach ($data as $moral) : ?>
                         <div id="infoClient1">
+                        <label for="id" id="lab4">Nom Employeur* : </label>
+                            <input type="text" readonly id="nomEmpl" name="id" value="<?= $moral->getId();?>" />
+                            <span id="missNomEmpl"></span>
+
                             <label for="nomEmpl" id="lab3">Nom Employeur* : </label>
-                            <input type="text" id="nomEmpl" name="nomEmpl" value="" placeholder="Nom Employeur" required />
+                            <input type="text" id="nomEmpl" name="nomEmpl" value="<?= $moral->getNomEmpl();?>"/>
                             <span id="missNomEmpl"></span>
 
                             <label for="ninea" id="lab1">Ninea* : </label>
-                            <input type="text" id="ninea" name="ninea" value="" placeholder="Ninea" required />
+                            <input type="text" id="ninea" name="ninea" value="<?= $moral->getNinea();?>"/>
                             <span id="missNinea"></span>
 
-                            <label for="rc" id="lab">Registre de commerce* : </label>
-                            <input type="rc" id="rc" name="rc" value="" placeholder="Registre de commerce" required />
+                            <label id="lab">Registre de commerce* : </label>
+                            <input type="rc" id="rc" name="rc" value="<?= $moral->getRc();?>"/>
                             <span id="missRc"></span>
                         </div>
 
                         <div id="infoClient2">
                             <label for="raisonSocial" id="lab1">Raison Social* : </label>
-                            <input type="raisonSocial" id="raisonSocial" name="raisonSocial" value="" placeholder="Raison Social" required />
+                            <input type="raisonSocial" id="raisonSocial" name="raisonSocial" value="<?= $moral->getRaisonSocial();?>"/>
                             <span id="missRaisonSocial"></span>
 
                             <label for="adressEmpl" id="lab1">Adresse* : </label>
-                            <input type="text" id="adressEmpl" name="adressEmpl" value="" placeholder="Adresse de l'employeur" required />
+                            <input type="text" id="adressEmpl" name="adressEmpl" value="<?= $moral->getAdressEmpl();?>"/>
                             <span id="missAdressEmpl"></span>
 
                         </div>
+                        <?php endforeach ?>
                     </div>
                 </fieldset>
 
-                <button type="submit" name="ajouter">Valider</button>
+                <button type="submit" name="modifier" value="modifier">Valider</button>
             </form>
             <script type="text/javascript" src="JS/employeur.js"></script>
         </main>

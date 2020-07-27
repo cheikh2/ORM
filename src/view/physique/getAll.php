@@ -10,31 +10,39 @@
 
 <body>
     <div class="container">
-        <h2>Clients Moraux</h2>
+        <h2>Clients Physique</h2>
         <div class="title-underline"></div>
 
         <table class="bordered">
             <thead>
                 <tr>
-                    <th>IdEmployeur</th>
-                    <th>Nom de l'Employeur</th>
-                    <th>Ninea</th>
-                    <th>RC</th>
-                    <th>Raison Sociale</th>
+                    <th>Id_Client</th>
+                    <th>Prenom</th>
+                    <th>Nom</th>
                     <th>Adresse</th>
-                    <th>Action</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
+                    <th>Sexe</th>
+                    <th>Profession</th>
+                    <th>CNI</th>
+                    <th>Salaire</th>
+                    <th>Moral_id</th>
                 </tr>
             </thead>
 
-            <?php foreach ($data as $moral) : ?>
+            <?php foreach ($data as $physique) : ?>
 
-                <td><?= $moral->getId(); ?></td>
-                <td><?= $moral->getNomEmpl();  ?></td>
-                <td><?= $moral->getNinea();  ?></td>
-                <td><?= $moral->getRc();  ?></td>
-                <td><?= $moral->getRaisonSocial();  ?></td>
-                <td><?= $moral->getAdressEmpl();  ?></td>
-                <td><a href="../Moral/edit/<?= $moral->getId(); ?>">Editer</a></td>
+                <td><?= $physique->getId(); ?></td>
+                <td><?= $physique->getPrenom(); ?></td>
+                <td><?= $physique->getNom();  ?></td>
+                <td><?= $physique->getAdress();  ?></td>
+                <td><?= $physique->getEmail();  ?></td>
+                <td><?= $physique->getTelephone();  ?></td>
+                <td><?= $physique->getSexe();  ?></td>
+                <td><?= $physique->getProfession(); ?></td>
+                <td><?= $physique->getCni(); ?></td>
+                <td><?= $physique->getSalaire(); ?></td>
+                <td><?= $physique->getMoral()->getNomEmpl(); ?></td>
                 </tr>
             <?php endforeach ?>
         </table>

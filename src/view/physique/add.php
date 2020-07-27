@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/Moral.css" />
     <title>Client Physique</title>
-    <link rel="stylesheet" href="..assetsstyle.css">
+    <link rel="stylesheet" href="..assets/style.css">
 </head>
 
 <body>
@@ -22,8 +22,8 @@
             <div id="lien">
                 <ul id="naviguer">
                     <li><a href="#">Home</a></li>
-                    <li><a href="../Model/List_Client_Physique.php">Liste clients</a></li>
-                    <li><a href="#">Liste des comptes</a></li>
+                    <li><a href="add">Liste clients</a></li>
+                    <li><a href="getAll">Liste des comptes</a></li>
                     <li><a href="deconnexion.php">Deconnexion</a></li>
                 </ul>
             </div>
@@ -36,7 +36,7 @@
             </div>
             <nav>
                 <ul id="navigation">
-                    <li><a href="client.php">Client</a></li>
+                    <li><a href="../moral/add">Client</a></li>
                     <li><a href="employeur.php">Client Moral</a></li>
                     <li><a href="compte.php">Compte</a></li>
                 </ul>
@@ -50,27 +50,51 @@
                     <div id="infoClient">
 
                         <div id="infoClient1">
-                            <label for="nomEmpl" id="lab3">Nom Employeur* : </label>
-                            <input type="text" id="nomEmpl" name="nomEmpl" value="" placeholder="Nom Employeur" required />
-                            <span id="missNomEmpl"></span>
+                            <label for="prenom" id="lab3">Prenom : </label>
+                            <input type="text" id="prenom" name="prenom" placeholder="Prenom" required />
+                            <span id="missPrenom"></span>
 
-                            <label for="ninea" id="lab1">Ninea* : </label>
-                            <input type="text" id="ninea" name="ninea" value="" placeholder="Ninea" required />
-                            <span id="missNinea"></span>
+                            <label for="nom" id="lab3">Nom : </label>
+                            <input type="text" id="nom" name="nom" placeholder="nom" required />
+                            <span id="missNom"></span>
 
-                            <label for="rc" id="lab">Registre de commerce* : </label>
-                            <input type="rc" id="rc" name="rc" value="" placeholder="Registre de commerce" required />
-                            <span id="missRc"></span>
+                            <label for="adress" id="lab1">Adress : </label>
+                            <input type="text" id="adress" name="adress" placeholder="adress" required />
+                            <span id="missAdress"></span>
+
+                            <label for="email" id="lab">Email : </label>
+                            <input type="email" id="email" name="email" placeholder="Email" required />
+                            <span id="missEmail"></span>
+
+                            <label for="telephone" id="lab">Telephone : </label>
+                            <input type="telephone" id="telephone" name="telephone" placeholder="telephone" required />
+                            <span id="missTelephone"></span>
                         </div>
 
                         <div id="infoClient2">
-                            <label for="raisonSocial" id="lab1">Raison Social* : </label>
-                            <input type="raisonSocial" id="raisonSocial" name="raisonSocial" value="" placeholder="Raison Social" required />
-                            <span id="missRaisonSocial"></span>
+                            <label for="sexe" id="lab1">Sexe : </label>
+                            <input type="sexe" id="sexe" name="sexe" placeholder="sexe" required />
+                            <span id="missSexe"></span>
 
-                            <label for="adressEmpl" id="lab1">Adresse* : </label>
-                            <input type="text" id="adressEmpl" name="adressEmpl" value="" placeholder="Adresse de l'employeur" required />
-                            <span id="missAdressEmpl"></span>
+                            <label for="profession" id="lab1">Profession : </label>
+                            <input type="text" id="profession" name="profession" placeholder="Profession" required />
+                            <span id="missProfession"></span>
+
+                            <label for="cni" id="lab1">Cni : </label>
+                            <input type="text" id="cni" name="cni" placeholder="cni" required />
+                            <span id="missCni"></span>
+
+                            <label for="salaire" id="lab1">Cni : </label>
+                            <input type="text" id="salaire" name="salaire" placeholder="salaire" required />
+                            <span id="missSalaire"></span>
+
+                            <label for="moral" id="lab1">Employeur : </label>
+                            <select id="cni" name="moral">
+                                <option value="">Faites votre choix</option>
+                                <?php foreach ($data as $physique) : ?>
+                                    <option value="<?= $physique->getMoral()->getId(); ?>"><?= $physique->getNomEmpl(); ?></option>
+                                <?php endforeach ?>
+                            </select>
 
                         </div>
                     </div>

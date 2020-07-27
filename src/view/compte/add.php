@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/Moral.css" />
     <title>Client Physique</title>
-    <link rel="stylesheet" href="..assetsstyle.css">
+    <link rel="stylesheet" href="..assets/style.css">
 </head>
 
 <body>
@@ -22,8 +22,8 @@
             <div id="lien">
                 <ul id="naviguer">
                     <li><a href="#">Home</a></li>
-                    <li><a href="../Model/List_Client_Physique.php">Liste clients</a></li>
-                    <li><a href="#">Liste des comptes</a></li>
+                    <li><a href="add">Liste clients</a></li>
+                    <li><a href="getAll">Liste des comptes</a></li>
                     <li><a href="deconnexion.php">Deconnexion</a></li>
                 </ul>
             </div>
@@ -36,7 +36,7 @@
             </div>
             <nav>
                 <ul id="navigation">
-                    <li><a href="client.php">Client</a></li>
+                    <li><a href="../moral/add">Client</a></li>
                     <li><a href="employeur.php">Client Moral</a></li>
                     <li><a href="compte.php">Compte</a></li>
                 </ul>
@@ -50,27 +50,24 @@
                     <div id="infoClient">
 
                         <div id="infoClient1">
-                            <label for="nomEmpl" id="lab3">Nom Employeur* : </label>
-                            <input type="text" id="nomEmpl" name="nomEmpl" value="" placeholder="Nom Employeur" required />
-                            <span id="missNomEmpl"></span>
+                            <label for="numAgence" id="lab3">Numero Agence : </label>
+                            <input type="text" id="numAgence" name="numAgence" required />
+                            <span id="missNumAgence"></span>
 
-                            <label for="ninea" id="lab1">Ninea* : </label>
-                            <input type="text" id="ninea" name="ninea" value="" placeholder="Ninea" required />
-                            <span id="missNinea"></span>
+                            <label for="numCompte" id="lab3">Numero Compte : </label>
+                            <input type="text" id="numCompte" name="numCompte" required />
+                            <span id="missNumCompte"></span>
 
-                            <label for="rc" id="lab">Registre de commerce* : </label>
-                            <input type="rc" id="rc" name="rc" value="" placeholder="Registre de commerce" required />
-                            <span id="missRc"></span>
                         </div>
 
                         <div id="infoClient2">
-                            <label for="raisonSocial" id="lab1">Raison Social* : </label>
-                            <input type="raisonSocial" id="raisonSocial" name="raisonSocial" value="" placeholder="Raison Social" required />
-                            <span id="missRaisonSocial"></span>
+                            <label for="rib" id="lab1"> Cle Rib : </label>
+                            <input type="text" id="rib" name="rib" required />
+                            <span id="missRib"></span>
 
-                            <label for="adressEmpl" id="lab1">Adresse* : </label>
-                            <input type="text" id="adressEmpl" name="adressEmpl" value="" placeholder="Adresse de l'employeur" required />
-                            <span id="missAdressEmpl"></span>
+                            <label for="montant" id="lab1">Montant : </label>
+                            <input type="text" id="montant" name="montant" required />
+                            <span id="missMontant"></span>
 
                         </div>
                     </div>

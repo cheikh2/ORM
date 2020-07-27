@@ -10,31 +10,31 @@
 
 <body>
     <div class="container">
-        <h2>Clients Moraux</h2>
+        <h2>Liste de Comptes</h2>
         <div class="title-underline"></div>
 
         <table class="bordered">
             <thead>
                 <tr>
-                    <th>IdEmployeur</th>
-                    <th>Nom de l'Employeur</th>
-                    <th>Ninea</th>
-                    <th>RC</th>
-                    <th>Raison Sociale</th>
-                    <th>Adresse</th>
-                    <th>Action</th>
+                    <th>Id_Compte</th>
+                    <th>Numero Agence</th>
+                    <th>Numero Compte</th>
+                    <th>Cle Rib</th>
+                    <th>Montant</th>
+                    <th>Debut Blocage</th>
+                    <th>Fin Blocage</th>
                 </tr>
             </thead>
 
             <?php foreach ($data as $moral) : ?>
 
                 <td><?= $moral->getId(); ?></td>
-                <td><?= $moral->getNomEmpl();  ?></td>
-                <td><?= $moral->getNinea();  ?></td>
-                <td><?= $moral->getRc();  ?></td>
-                <td><?= $moral->getRaisonSocial();  ?></td>
-                <td><?= $moral->getAdressEmpl();  ?></td>
-                <td><a href="../Moral/edit/<?= $moral->getId(); ?>">Editer</a></td>
+                <td><?= $moral->getNumAgence();  ?></td>
+                <td><?= $moral->getNumCompte();  ?></td>
+                <td><?= $moral->getRib();  ?></td>
+                <td><?= $moral->getMontant();  ?></td>       
+                <td><?= $moral->getDateDebut();  ?></td>
+                <td><?= $moral->getDateFin();  ?></td>
                 </tr>
             <?php endforeach ?>
         </table>
