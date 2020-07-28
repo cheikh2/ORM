@@ -31,7 +31,6 @@
             </thead>
 
             <?php foreach ($data as $physique) : ?>
-
                 <td><?= $physique->getId(); ?></td>
                 <td><?= $physique->getPrenom(); ?></td>
                 <td><?= $physique->getNom();  ?></td>

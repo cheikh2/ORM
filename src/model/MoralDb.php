@@ -37,4 +37,12 @@ class MoralDb extends Model
 
         $this->entityManager->flush();
     }
+
+    public function delete($id){
+        //$m = $this->get($id);
+        $m = $this->entityManager->find('Moral', $id);
+        $this->entityManager->remove($m);
+        $this->entityManager->flush();
+    }
 }
+

@@ -59,15 +59,18 @@ class Physique
      * @ORM\Column(type="integer")
      */
     private $salaire;
-    
-    /**
+
+     /**
+     * Many physiques have one Moral. This is the owning side.
      * @ORM\ManyToOne(targetEntity="Moral", inversedBy="physiques")
+     * @ORM\JoinColumn(name="moral_id", referencedColumnName="id")
      */
     private $moral;
 
 
     public function __construct()
     {
+        
     }
 
     public function getId()

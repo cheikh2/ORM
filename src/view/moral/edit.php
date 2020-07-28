@@ -50,7 +50,7 @@
                     <div id="infoClient">
                     <?php foreach ($data as $moral) : ?>
                         <div id="infoClient1">
-                        <label for="id" id="lab4">Nom Employeur* : </label>
+                        <label for="id" id="lab4"></label>
                             <input type="text" readonly id="nomEmpl" name="id" value="<?= $moral->getId();?>" />
                             <span id="missNomEmpl"></span>
 
@@ -62,12 +62,13 @@
                             <input type="text" id="ninea" name="ninea" value="<?= $moral->getNinea();?>"/>
                             <span id="missNinea"></span>
 
-                            <label id="lab">Registre de commerce* : </label>
-                            <input type="rc" id="rc" name="rc" value="<?= $moral->getRc();?>"/>
-                            <span id="missRc"></span>
                         </div>
 
                         <div id="infoClient2">
+                        <label id="lab">Registre de commerce* : </label>
+                            <input type="rc" id="rc" name="rc" value="<?= $moral->getRc();?>"/>
+                            <span id="missRc"></span>
+
                             <label for="raisonSocial" id="lab1">Raison Social* : </label>
                             <input type="raisonSocial" id="raisonSocial" name="raisonSocial" value="<?= $moral->getRaisonSocial();?>"/>
                             <span id="missRaisonSocial"></span>

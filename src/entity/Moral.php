@@ -2,13 +2,14 @@
 //namespace src\entity;
 
 use Doctrine\ORM\Mapping as ORM;
-//use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity 
  * @ORM\Table(name="Moral")
- */
-class Moral{
+ **/
+class Moral
+{
 
     /**
      * @ORM\Id()
@@ -19,7 +20,7 @@ class Moral{
 
     /**
      * @ORM\Column(type="string")
-     */ 
+     */
     private $nomEmpl;
 
     /**
@@ -42,10 +43,16 @@ class Moral{
      */
     private $adressEmpl;
 
-    // public function __construct()
-    // {
-    //     $this->physiques = new ArrayCollection();
-    // }
+    /**
+     * One moral has many physiques. This is the inverse side.
+     * @ORM\OneToMany(targetEntity="Physique", mappedBy="moral")
+     */
+    private $physiques;
+
+    public function __construct()
+    {
+        $this->physiques = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -84,7 +91,7 @@ class Moral{
 
         return $this;
     }
- 
+
     public function getRc()
     {
         return $this->rc;
@@ -101,7 +108,7 @@ class Moral{
     {
         return $this->raisonSocial;
     }
- 
+
     public function setRaisonSocial($raisonSocial)
     {
         $this->raisonSocial = $raisonSocial;
@@ -119,5 +126,14 @@ class Moral{
         $this->adressEmpl = $adressEmpl;
 
         return $this;
+    }
+
+    public function getPhysiques()
+    {
+        return $this->physiques;
+    }
+    public function setPhysiques($physiques)
+    {
+        $this->physiques = $physiques;
     }
 }

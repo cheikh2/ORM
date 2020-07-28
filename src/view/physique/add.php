@@ -43,7 +43,7 @@
             </nav>
             <br />
 
-            <form action="" method="POST" id="myform2">
+            <form action="http://localhost/ORM/Physique/save" method="POST" id="myform2">
 
                 <fieldset id="field1">
                     <legend id="legend1">Informations Client</legend>
@@ -91,8 +91,8 @@
                             <label for="moral" id="lab1">Employeur : </label>
                             <select id="cni" name="moral">
                                 <option value="">Faites votre choix</option>
-                                <?php foreach ($data as $physique) : ?>
-                                    <option value="<?= $physique->getMoral()->getId(); ?>"><?= $physique->getNomEmpl(); ?></option>
+                                <?php foreach ($data as $moral) : ?>
+                                    <option value="<?= $moral->getId(); ?>"><?= $moral->getNomEmpl(); ?></option>
                                 <?php endforeach ?>
                             </select>
 

@@ -32,7 +32,8 @@ class MoralController extends Controller
         return $this->view->load("moral/add");
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $moraldao = new MoralDb;
         $moral = $moraldao->get($id);
         return $this->view->load("moral/edit", $moral);
@@ -68,6 +69,9 @@ class MoralController extends Controller
 
     public function delete($id)
     {
-        echo $id;
+        $moraldao = new MoralDb;
+        $moraldao->delete($id);
+
+        header('Location:getAll');
     }
 }

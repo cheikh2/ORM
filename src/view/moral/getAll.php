@@ -23,6 +23,7 @@
                     <th>Raison Sociale</th>
                     <th>Adresse</th>
                     <th>Action</th>
+                    <th>Action</th>
                 </tr>
             </thead>
 
@@ -35,6 +36,7 @@
                 <td><?= $moral->getRaisonSocial();  ?></td>
                 <td><?= $moral->getAdressEmpl();  ?></td>
                 <td><a href="../Moral/edit/<?= $moral->getId(); ?>">Editer</a></td>
+                <td><a href="../Moral/delete/<?= $moral->getId(); ?>" onclick="return confirm('Voulez-vous supprimer')">Supprimer</a></td>
                 </tr>
             <?php endforeach ?>
         </table>

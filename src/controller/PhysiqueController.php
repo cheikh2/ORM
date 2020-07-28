@@ -17,7 +17,7 @@ class PhysiqueController extends Controller
         return $this->view->load("physique/index");   
     }  
 
-    public function add()
+    public function save()
     {
         if (isset($_POST['ajouter'])) {
             $physiquedao = new PhysiqueDb;
@@ -33,8 +33,15 @@ class PhysiqueController extends Controller
             $physique->setCni($cni);
             $physique->setSalaire($salaire);
             $physique->setSexe($sexe);
-            $physique->setMoral($moral);
+            //echo $moral;
+            //$physiquedao->getMoral($moral)
+            //var_dump($physiquedao->getMoral($moral)[0]);die;
+            // $pmoral = $physiquedao->get($moral);
+            //  var_dump($pmoral);
+            //  die();
 
+            $physique->setMoral($physiquedao->getMoral($moral)[0]);
+            
             
             $physiquedao->insert($physique);
 
@@ -47,16 +54,14 @@ class PhysiqueController extends Controller
     {
         $physiquedao = new PhysiqueDb;
         $physique = $physiquedao->findAll();
-
-        $moraldao = new MoralDb;
-        $physique = $moraldao->findAll();
         return $this->view->load("physique/getAll", $physique);
     }
+    
 
-    // public function getMoral()
-    // {
-    //     $moraldao = new MoralDb;
-    //     $moral = $moraldao->findAll();
-    //     return $this->view->load("moral/getAll", $moral);
-    // }
+    public function add()
+    {
+        $moraldao = new MoralDb;
+        $moral = $moraldao->findAll();
+        return $this->view->load("physique/add", $moral);
+    }
 }
