@@ -4,6 +4,8 @@ require_once "src/entity/Compte.php";
 
 use libs\system\Controller;
 use src\model\CompteDb;
+use src\model\MoralDb;
+
 //use src\entity\Moral;
 
 class CompteController extends Controller
@@ -13,7 +15,7 @@ class CompteController extends Controller
         parent::__construct();
     }
 
-    public function add()
+    public function save()
     {
         if (isset($_POST['ajouter'])) {
             extract($_POST);
@@ -36,5 +38,13 @@ class CompteController extends Controller
         $comptedao = new CompteDb;
         $compte = $comptedao->findAll();
         return $this->view->load("compte/getAll", $compte);
+    }
+    
+
+    public function add()
+    {
+        $moraldao = new MoralDb;
+        $moral = $moraldao->findAll();
+        return $this->view->load("compte/add", $moral);
     }
 }

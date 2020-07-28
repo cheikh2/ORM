@@ -43,13 +43,22 @@
             </nav>
             <br />
 
-            <form action="" method="POST" id="myform2">
+            <form action="http://localhost/ORM/Compte/save" method="POST" id="myform2">
 
                 <fieldset id="field1">
                     <legend id="legend1">Informations Client</legend>
                     <div id="infoClient">
 
                         <div id="infoClient1">
+
+                            <label for="typeCompte" id="lab1">Type de Compte : </label>
+                            <select id="typeCompte" name="typeCompte">
+                                <option value="0">Faites votre choix</option>
+                                <option value="1">Compte Epargne</option>
+                                <option value="2">Compte Courant</option>
+                                <option value="3">Compte bloque</option>
+                            </select>
+
                             <label for="numAgence" id="lab3">Numero Agence : </label>
                             <input type="text" id="numAgence" name="numAgence" required />
                             <span id="missNumAgence"></span>
@@ -69,6 +78,13 @@
                             <input type="text" id="montant" name="montant" required />
                             <span id="missMontant"></span>
 
+                            <label for="moral" id="lab1">Client Moral : </label>
+                            <select id="cni" name="moral">
+                                <option value="">Faites votre choix</option>
+                                <?php foreach ($data as $moral) : ?>
+                                    <option value="<?= $moral->getId(); ?>"><?= $moral->getNomEmpl(); ?></option>
+                                <?php endforeach ?>
+                            </select>
                         </div>
                     </div>
                 </fieldset>

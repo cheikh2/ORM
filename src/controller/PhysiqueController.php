@@ -33,12 +33,6 @@ class PhysiqueController extends Controller
             $physique->setCni($cni);
             $physique->setSalaire($salaire);
             $physique->setSexe($sexe);
-            //echo $moral;
-            //$physiquedao->getMoral($moral)
-            //var_dump($physiquedao->getMoral($moral)[0]);die;
-            // $pmoral = $physiquedao->get($moral);
-            //  var_dump($pmoral);
-            //  die();
 
             $physique->setMoral($physiquedao->getMoral($moral)[0]);
             

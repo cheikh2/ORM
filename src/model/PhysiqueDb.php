@@ -12,12 +12,12 @@ class PhysiqueDb extends Model
                     ->getResult();
     }
 
-    public function findAllMo()
-    {
-        return $this->entityManager
-            ->createQuery("SELECT m FROM Moral m")
-            ->getResult();
-    }
+    // public function findAllMo()
+    // {
+    //     return $this->entityManager
+    //         ->createQuery("SELECT m FROM Moral m")
+    //         ->getResult();
+    // }
     // public function getMoral($id){
     //     return $this->entityManager
     //                 ->createQuery("SELECT m FROM Moral WHERE id=>$id")

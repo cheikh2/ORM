@@ -26,15 +26,14 @@
                 </tr>
             </thead>
 
-            <?php foreach ($data as $moral) : ?>
-
-                <td><?= $moral->getId(); ?></td>
-                <td><?= $moral->getNumAgence();  ?></td>
-                <td><?= $moral->getNumCompte();  ?></td>
-                <td><?= $moral->getRib();  ?></td>
-                <td><?= $moral->getMontant();  ?></td>       
-                <td><?= $moral->getDateDebut();  ?></td>
-                <td><?= $moral->getDateFin();  ?></td>
+            <?php foreach ($data as $compte) : ?>
+                <td><?= $compte->getId(); ?></td>
+                <td><?= $compte->getNumAgence();  ?></td>
+                <td><?= $compte->getNumCompte();  ?></td>
+                <td><?= $compte->getRib();  ?></td>
+                <td><?= $compte->getMontant();  ?></td>       
+                <td><?= $compte->getDateDebut();  ?></td>
+                <td><?= $compte->getDateFin();  ?></td>
                 </tr>
             <?php endforeach ?>
         </table>
